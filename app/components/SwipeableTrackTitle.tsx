@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { Track } from "@/data/tracks";
 import { tracks } from "@/data/tracks";
 import { usePlayerStore } from "@/store/playerStore";
+import RotatingText from "./RotatingText";
 
 const DRAG_THRESHOLD = 150;
 const CARD_WIDTH = 300;
@@ -97,7 +98,7 @@ export default function SwipeableTrackTitle() {
         return (
           <div
             key={index}
-            className="font-bold text-white rounded-2xl"
+            className="text-white rounded-2xl"
             style={{
               transform: `translateX(${totalOffset}px)`,
               opacity: getCardOpacity(xOffset, cardPositions[index]),
@@ -109,7 +110,11 @@ export default function SwipeableTrackTitle() {
               width: CARD_WIDTH,
             }}
           >
-            {track?.title}
+            {index === 1 ? (
+              <RotatingText text={track?.title ?? ""} maxWidth={250} />
+            ) : (
+              <div>{track?.title}</div>
+            )}
           </div>
         );
       })}

@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <div className="">
       <main className="">x</main>
-      <RotatingText text="Rotating Text Props" />
+      <RotatingText
+        text="14 Cornish Spreek5b [St. Nectan S Glen Waterfalls Mix]
+"
+      />
     </div>
   );
 }

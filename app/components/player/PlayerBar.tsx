@@ -31,16 +31,14 @@ export function PlayerBar() {
         </button>
       </div>
     );
-  console.log(queue);
-  console.log(currentIndex);
 
   return (
     <div className="flex flex-col bg-amber-400/30 px-3 rounded-lg">
       <div className="flex justify-between py-2">
-        <div>
+        <div className="max-w-[250px]">
           <SwipeableTrackTitle />
         </div>
-        <div className="flex gap-3">
+        <div className="flex gap-3 min-w-fit z-50">
           <div className="hidden" onClick={playPrev}>
             <img src="back.svg" />
           </div>
